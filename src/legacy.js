@@ -62,10 +62,6 @@ export function initPortfolio() {
       textT = navOn ? [] : [...panel.querySelectorAll("[data-sec]:not([hidden]) :is(h1,h2,h3,p,summary,.chips li,.links a,.plist li),.x")].map(el => ({ el, rs: [], zk: .25, x: 0, y: 0, z: 0, vx: 0, vy: 0, vz: 0, on: false, cool: 0 }));
       measureText(); setTimeout(measureText, 420);
     }
-    // links shown on the Contact page: add ["Email","mailto:you@example.com"], GitHub, LinkedIn etc.
-    const CONTACTS = [["Skateflow, my skating academy", "https://skateflow.vercel.app"], ["Email", ""], ["GitHub", ""], ["LinkedIn", ""]];
-    $("links").innerHTML = CONTACTS.filter(c => c[1]).map(c => `<li><a href="${c[1]}" target="_blank" rel="noopener">${c[0]}</a></li>`).join("");
-
     const views = ["about", "projects", "contact", "faqs", ...projects.map(p => `project/${p.slug}`), ...projects.filter(p => p.journey).map(p => `journey/${p.slug}`)], panel = $("panel"), navwrap = document.querySelector(".navwrap");
     let currentRoute = "";
     pool.insertBefore(panel, document.querySelector(".tint"));
