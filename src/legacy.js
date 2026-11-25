@@ -1,3 +1,5 @@
+import { projects, projectBySlug } from './data/projects.js';
+
 export function initPortfolio() {
 
     const $ = id => document.getElementById(id);
@@ -64,15 +66,19 @@ export function initPortfolio() {
     const CONTACTS = [["Skateflow, my skating academy", "https://skateflow.vercel.app"], ["Email", ""], ["GitHub", ""], ["LinkedIn", ""]];
     $("links").innerHTML = CONTACTS.filter(c => c[1]).map(c => `<li><a href="${c[1]}" target="_blank" rel="noopener">${c[0]}</a></li>`).join("");
 
-    const views = ["about", "projects", "contact", "faqs"], panel = $("panel"), navwrap = document.querySelector(".navwrap");
+    const views = ["about", "projects", "contact", "faqs", ...projects.map(p => `project/${p.slug}`), ...projects.filter(p => p.journey).map(p => `journey/${p.slug}`)], panel = $("panel"), navwrap = document.querySelector(".navwrap");
+    let currentRoute = "";
     pool.insertBefore(panel, document.querySelector(".tint"));
     function route(forced) {
       const id = typeof forced === "string" ? forced : location.hash.slice(1), on = views.includes(id);
+      currentRoute = id;
       panel.classList.toggle("open", on); scrim.classList.toggle("on", on); bear.classList.toggle("deep", on); navwrap.classList.toggle("hide", on);
       document.querySelectorAll("[data-sec]").forEach(s => s.hidden = s.dataset.sec !== id);
       panel.classList.toggle("tall", id === "about");
       navOn = !on; if (on) $("pbody").scrollTop = 0; setPH(); buildText();
-      document.title = on ? id[0].toUpperCase() + id.slice(1) + " | Atharv" : "Atharv | Portfolio";
+      const projectSlug = id.split("/")[1], project = projectBySlug[projectSlug];
+      const title = id.startsWith("project/") ? project?.title : id.startsWith("journey/") ? `${project?.title || "Project"} journey` : id[0]?.toUpperCase() + id.slice(1);
+      document.title = on ? `${title} | Atharv` : "Atharv | Portfolio";
     }
     function setPH() { const b = $("pbody"); b.style.setProperty("--ph", Math.max(240, b.clientHeight - 50) + "px"); requestAnimationFrame(() => { b.style.setProperty("--ph", Math.max(240, b.clientHeight - 50) + "px"); measureText() }) }
     addEventListener("resize", setPH);
@@ -90,7 +96,12 @@ export function initPortfolio() {
       try { history.replaceState(null, "", location.pathname + location.search) } catch (_) { try { location.hash = "" } catch (__) { } }
       route("");
     }
-    $("close").addEventListener("click", e => { e.preventDefault(); e.stopPropagation(); goHome() });
+    function goBack() {
+      if (currentRoute.startsWith("project/") || currentRoute.startsWith("journey/")) {
+        history.back();
+      } else goHome();
+    }
+    $("close").addEventListener("click", e => { e.preventDefault(); e.stopPropagation(); goBack() });
     addEventListener("keydown", e => { if (e.key === "Escape" && panel.classList.contains("open")) goHome() });
 
     const BREAK = 10; let broken = false;

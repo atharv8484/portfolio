@@ -669,4 +669,161 @@
         animation: none
       }
     }
+
+    .project-list-section {
+      margin: 26px 0 0
+    }
+
+    .project-list-section h2 {
+      margin-bottom: 8px;
+      text-align: center;
+      font: 800 clamp(32px, 5vw, 42px)/1.1 "Baloo 2", sans-serif;
+    }
+
+    .project-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .project-list li {
+      border-bottom: 1px solid rgba(255, 255, 255, .35);
+    }
+
+    .project-list li:first-child {
+      border-top: 1px solid rgba(255, 255, 255, .35);
+    }
+
+    .project-list a {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      padding: 13px 2px;
+      color: inherit;
+      text-decoration: none;
+      transition: padding .2s, background .2s;
+    }
+
+    .project-list a:hover,
+    .project-list a:focus-visible {
+      padding-left: 10px;
+      background: rgba(255, 255, 255, .08);
+    }
+
+    .project-list-title {
+      font: 800 21px/1.25 "Baloo 2", sans-serif;
+    }
+
+    .project-list-summary {
+      font-size: 15px;
+    }
+
+    .project-detail > h2,
+    .project-journey > h2 {
+      margin-top: 20px;
+    }
+
+    .project-detail > h1 {
+      text-align: center;
+    }
+
+    .project-journey > h1 {
+      text-align: center;
+    }
+
+    .project-gallery {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 10px;
+      margin: 16px 0 22px;
+    }
+
+    .project-gallery img,
+    .project-image-placeholder {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      border-radius: 16px;
+      border: 1px solid rgba(255, 255, 255, .45);
+      box-sizing: border-box;
+    }
+
+    .project-gallery figure {
+      min-width: 0;
+      margin: 0;
+    }
+
+    .project-gallery figcaption {
+      padding: 5px 4px 0;
+      font-size: 13px;
+      text-align: center;
+    }
+
+    .project-image-placeholder {
+      grid-column: 1 / -1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 4px;
+      text-align: center;
+      padding: 20px;
+      color: rgba(255, 255, 255, .86);
+      background: linear-gradient(145deg, rgba(255, 255, 255, .18), rgba(10, 63, 104, .42));
+      font: 800 24px/1.2 "Baloo 2", sans-serif;
+    }
+
+    .project-image-placeholder small {
+      font: 600 14px Nunito, sans-serif;
+    }
+
+    .project-links .links {
+      margin-top: 0;
+    }
+
+    .project-action-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .project-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 4px 12px;
+      border: 1px solid rgba(255, 255, 255, .45);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, .08);
+      color: inherit;
+      font: 700 14px Nunito, sans-serif;
+      text-decoration: none;
+      transition: background .2s;
+    }
+
+    .project-button:hover,
+    .project-button:focus-visible {
+      background: rgba(255, 255, 255, .3);
+    }
+
+    .temporary-link-note {
+      margin: 8px 0 0;
+      font-size: 13px;
+      opacity: .85;
+    }
+
+    .journey-copy {
+      margin-top: 28px;
+      font-size: 21px;
+      line-height: 1.85;
+    }
+
+    @media (max-width: 560px) {
+      .project-gallery {
+        grid-template-columns: 1fr;
+      }
+    }
   

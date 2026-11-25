@@ -4,6 +4,7 @@ import { sceneMarkup } from './sceneMarkup.js';
 import { initPortfolio } from './legacy.js';
 import AboutSection from './components/AboutSection.jsx';
 import ProjectsSection from './components/ProjectsSection.jsx';
+import ProjectPages from './components/ProjectPages.jsx';
 import ContactSection from './components/ContactSection.jsx';
 import FAQsSection from './components/FAQsSection.jsx';
 import './styles.css';
@@ -26,6 +27,7 @@ function SectionPanel({ panelRef }) {
         <div className="body" id="pbody">
           <AboutSection />
           <ProjectsSection />
+          <ProjectPages />
           <ContactSection />
           <FAQsSection />
         </div>

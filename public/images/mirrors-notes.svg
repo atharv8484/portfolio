@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 600" role="img" aria-labelledby="title desc">
+  <title id="title">Mirrors notes concept</title>
+  <desc id="desc">Illustrative student notes interface showing a selected note and a focused answer.</desc>
+  <defs>
+    <linearGradient id="bg" x2="1" y2="1"><stop stop-color="#dff8ff"/><stop offset="1" stop-color="#8bcde5"/></linearGradient>
+    <linearGradient id="panel" x2="0" y2="1"><stop stop-color="#fff"/><stop offset="1" stop-color="#f0fbff"/></linearGradient>
+  </defs>
+  <rect width="960" height="600" rx="32" fill="url(#bg)"/>
+  <rect x="46" y="42" width="868" height="516" rx="24" fill="url(#panel)" stroke="#6dbbd8" stroke-width="3"/>
+  <rect x="46" y="42" width="868" height="72" rx="24" fill="#0b3b5c"/>
+  <path d="M46 88h868v26H46z" fill="#0b3b5c"/>
+  <circle cx="80" cy="78" r="10" fill="#8be1ef"/><text x="104" y="87" fill="#fff" font-family="Arial,sans-serif" font-size="27" font-weight="700">mirrors</text>
+  <rect x="674" y="61" width="204" height="34" rx="17" fill="#ffffff" opacity=".18"/><text x="697" y="84" fill="#e9faff" font-family="Arial,sans-serif" font-size="14">Search your learning</text>
+  <rect x="70" y="138" width="238" height="390" rx="16" fill="#e8f7fc"/>
+  <text x="94" y="177" fill="#0b3b5c" font-family="Arial,sans-serif" font-size="18" font-weight="700">YOUR NOTES</text>
+  <rect x="88" y="196" width="202" height="74" rx="12" fill="#fff"/><text x="104" y="225" fill="#185b7e" font-family="Arial,sans-serif" font-size="15" font-weight="700">Linear algebra</text><text x="104" y="249" fill="#63879a" font-family="Arial,sans-serif" font-size="13">Vectors and transformations</text>
+  <rect x="88" y="282" width="202" height="74" rx="12" fill="#d0f1f8" stroke="#41afd1" stroke-width="2"/><text x="104" y="311" fill="#185b7e" font-family="Arial,sans-serif" font-size="15" font-weight="700">Neural networks</text><text x="104" y="335" fill="#63879a" font-family="Arial,sans-serif" font-size="13">Backpropagation notes</text>
+  <rect x="88" y="368" width="202" height="74" rx="12" fill="#fff"/><text x="104" y="397" fill="#185b7e" font-family="Arial,sans-serif" font-size="15" font-weight="700">Probability</text><text x="104" y="421" fill="#63879a" font-family="Arial,sans-serif" font-size="13">Bayes rule and examples</text>
+  <rect x="88" y="454" width="202" height="54" rx="12" fill="#fff"/><text x="104" y="487" fill="#185b7e" font-family="Arial,sans-serif" font-size="15" font-weight="700">+ Add a note</text>
+  <text x="344" y="166" fill="#3985a7" font-family="Arial,sans-serif" font-size="14" font-weight="700" letter-spacing="2">ASK YOUR KNOWLEDGE</text>
+  <rect x="340" y="184" width="540" height="56" rx="16" fill="#fff" stroke="#a8d9e8" stroke-width="2"/><text x="364" y="219" fill="#66889a" font-family="Arial,sans-serif" font-size="16">How does backpropagation update weights?</text>
+  <rect x="340" y="260" width="540" height="218" rx="18" fill="#f5fcff" stroke="#c6e7f0" stroke-width="2"/>
+  <circle cx="373" cy="296" r="12" fill="#43b5d4"/><path d="m367 296 4 4 8-9" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="398" y="302" fill="#0b3b5c" font-family="Arial,sans-serif" font-size="17" font-weight="700">A focused answer from your notes</text>
+  <rect x="370" y="326" width="430" height="11" rx="5" fill="#9bc9d9"/><rect x="370" y="349" width="385" height="11" rx="5" fill="#b2d7e3"/><rect x="370" y="372" width="412" height="11" rx="5" fill="#b2d7e3"/>
+  <rect x="370" y="411" width="198" height="40" rx="12" fill="#d9f5fb"/><text x="388" y="437" fill="#176386" font-family="Arial,sans-serif" font-size="14" font-weight="700">Source: Neural networks</text>
+  <text x="342" y="514" fill="#6b92a3" font-family="Arial,sans-serif" font-size="13">Illustrative concept visual · not a product screenshot</text>
+</svg>
