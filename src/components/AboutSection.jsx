@@ -1,17 +1,21 @@
 export function Intro() {
   return (
-    <section className="sub">
+    <section className="sub about-intro">
       <h1>Hi, I am Atharv.</h1>
       <p className="lead">
         I love to build things: websites, backend systems, AI tools, and a bit of everything in between. If it is interesting and I can make it work, I want to try it.
       </p>
+      <div className="scroll-cue" aria-label="Scroll down to explore more about me">
+        <span>Scroll to explore</span>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg>
+      </div>
     </section>
   );
 }
 
 export function AboutMe() {
   return (
-    <section className="sub">
+    <section className="sub about-more">
       <p>
         I am on a gap year in Khargone, Madhya Pradesh, getting ready to join Scaler School of Technology next year. I am using this time to build and learn at my own pace before college.
       </p>
@@ -21,6 +25,10 @@ export function AboutMe() {
       <p>
         The long-term plan is a cross-disciplinary research lab in the spirit of Bell Labs, where curiosity leads and different fields share a room. I am curious about quantum mechanics, Arduino electronics, ethical hacking, and where AI meets music and robotics.
       </p>
+      <div className="scroll-cue" aria-label="Scroll to explore more">
+        <span>Scroll to explore more</span>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg>
+      </div>
     </section>
   );
 }
