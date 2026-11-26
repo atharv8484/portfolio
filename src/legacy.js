@@ -71,6 +71,8 @@ export function initPortfolio() {
       panel.classList.toggle("open", on); scrim.classList.toggle("on", on); bear.classList.toggle("deep", on); navwrap.classList.toggle("hide", on);
       document.querySelectorAll("[data-sec]").forEach(s => s.hidden = s.dataset.sec !== id);
       panel.classList.toggle("tall", id === "about" || id === "credentials");
+      panel.classList.toggle("resume-view", id === "about");
+      $("resume-download").hidden = id !== "about";
       navOn = !on; if (on) $("pbody").scrollTop = 0; setPH(); buildText();
       const projectSlug = id.split("/")[1], project = projectBySlug[projectSlug];
       const title = id === "credentials" ? "Certificates & Achievements" : id.startsWith("project/") ? project?.title : id.startsWith("journey/") ? `${project?.title || "Project"} journey` : id[0]?.toUpperCase() + id.slice(1);

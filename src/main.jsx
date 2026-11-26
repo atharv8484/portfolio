@@ -24,6 +24,10 @@ function SectionPanel({ panelRef }) {
               <path d="M19 12H5M11 5l-7 7 7 7" />
             </svg>
           </a>
+          <a className="resume-download" id="resume-download" href="/resume.pdf" download="Atharv-Resume.pdf" hidden>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4M5 17v3h14v-3" /></svg>
+            <span>Download resume (PDF)</span>
+          </a>
         </header>
         <div className="body" id="pbody">
           <AboutSection />
