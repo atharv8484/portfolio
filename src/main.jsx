@@ -7,6 +7,7 @@ import ProjectsSection from './components/ProjectsSection.jsx';
 import ProjectPages from './components/ProjectPages.jsx';
 import ContactSection from './components/ContactSection.jsx';
 import FAQsSection from './components/FAQsSection.jsx';
+import CredentialsSection from './components/CredentialsSection.jsx';
 import './styles.css';
 
 function PoolScene({ hostRef }) {
@@ -28,6 +29,7 @@ function SectionPanel({ panelRef }) {
           <AboutSection />
           <ProjectsSection />
           <ProjectPages />
+          <CredentialsSection />
           <ContactSection />
           <FAQsSection />
         </div>

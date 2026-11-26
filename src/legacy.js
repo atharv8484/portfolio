@@ -62,7 +62,7 @@ export function initPortfolio() {
       textT = navOn ? [] : [...panel.querySelectorAll("[data-sec]:not([hidden]) :is(h1,h2,h3,p,summary,.chips li,.links a,.plist li),.x")].map(el => ({ el, rs: [], zk: .25, x: 0, y: 0, z: 0, vx: 0, vy: 0, vz: 0, on: false, cool: 0 }));
       measureText(); setTimeout(measureText, 420);
     }
-    const views = ["about", "projects", "contact", "faqs", ...projects.map(p => `project/${p.slug}`), ...projects.filter(p => p.journey).map(p => `journey/${p.slug}`)], panel = $("panel"), navwrap = document.querySelector(".navwrap");
+    const views = ["about", "projects", "contact", "faqs", "credentials", ...projects.map(p => `project/${p.slug}`), ...projects.filter(p => p.journey).map(p => `journey/${p.slug}`)], panel = $("panel"), navwrap = document.querySelector(".navwrap");
     let currentRoute = "";
     pool.insertBefore(panel, document.querySelector(".tint"));
     function route(forced) {
@@ -70,10 +70,10 @@ export function initPortfolio() {
       currentRoute = id;
       panel.classList.toggle("open", on); scrim.classList.toggle("on", on); bear.classList.toggle("deep", on); navwrap.classList.toggle("hide", on);
       document.querySelectorAll("[data-sec]").forEach(s => s.hidden = s.dataset.sec !== id);
-      panel.classList.toggle("tall", id === "about");
+      panel.classList.toggle("tall", id === "about" || id === "credentials");
       navOn = !on; if (on) $("pbody").scrollTop = 0; setPH(); buildText();
       const projectSlug = id.split("/")[1], project = projectBySlug[projectSlug];
-      const title = id.startsWith("project/") ? project?.title : id.startsWith("journey/") ? `${project?.title || "Project"} journey` : id[0]?.toUpperCase() + id.slice(1);
+      const title = id === "credentials" ? "Certificates & Achievements" : id.startsWith("project/") ? project?.title : id.startsWith("journey/") ? `${project?.title || "Project"} journey` : id[0]?.toUpperCase() + id.slice(1);
       document.title = on ? `${title} | Atharv` : "Atharv | Portfolio";
     }
     function setPH() { const b = $("pbody"); b.style.setProperty("--ph", Math.max(240, b.clientHeight - 50) + "px"); requestAnimationFrame(() => { b.style.setProperty("--ph", Math.max(240, b.clientHeight - 50) + "px"); measureText() }) }

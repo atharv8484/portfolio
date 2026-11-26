@@ -250,6 +250,14 @@
       border-radius: 12px
     }
 
+    .nav a.credentials-nav {
+      max-width: min(86vw, 680px);
+      padding: 8px 18px;
+      font-size: clamp(24px, 4.5vmin, 38px);
+      line-height: 1.1;
+      text-align: center;
+    }
+
     @media (prefers-reduced-motion:reduce) {
       .nav {
         filter: none
@@ -901,6 +909,150 @@
       line-height: 1.85;
     }
 
+    .credential-stage {
+      position: relative;
+      padding: 30px 0 72px;
+    }
+
+    .credential-stage > h1 {
+      margin-bottom: 22px;
+      text-align: center;
+    }
+
+    .credential-slider {
+      width: min(100%, 700px);
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .credential-track {
+      display: flex;
+      width: 100%;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scrollbar-width: none;
+      overscroll-behavior-x: contain;
+      touch-action: pan-y;
+      cursor: grab;
+      user-select: none;
+    }
+
+    .credential-track::-webkit-scrollbar {
+      display: none;
+    }
+
+    .credential-track.is-dragging {
+      cursor: grabbing;
+      scroll-snap-type: none;
+    }
+
+    .credential-slide {
+      display: flex;
+      flex: 0 0 100%;
+      min-width: 0;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      scroll-snap-align: center;
+    }
+
+    .certificate-image {
+      display: block;
+      width: 100%;
+      max-height: min(48vh, 440px);
+      object-fit: contain;
+      pointer-events: none;
+      filter: drop-shadow(0 14px 24px rgba(0, 35, 75, .2));
+    }
+
+    .credential-slide-title {
+      margin: 10px 0 0;
+      font-size: 15px;
+      text-align: center;
+    }
+
+    .credential-slide-title span {
+      opacity: .78;
+    }
+
+    .achievement-card {
+      position: relative;
+      display: flex;
+      width: 100%;
+      min-height: 280px;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 30px;
+      overflow: hidden;
+      box-sizing: border-box;
+      border: 1px solid rgba(255, 255, 255, .55);
+      border-radius: 24px;
+      background: linear-gradient(145deg, rgba(240, 171, 119, .4), rgba(255, 255, 255, .1));
+      box-shadow: 0 14px 32px rgba(0, 45, 90, .2);
+    }
+
+    .achievement-card h2 {
+      margin: 18px 0 8px;
+      font: 800 clamp(24px, 4vw, 34px)/1.15 "Baloo 2", sans-serif;
+    }
+
+    .achievement-card p {
+      margin: 0;
+      font-size: 15px;
+    }
+
+    .achievement-sparkle {
+      position: absolute;
+      top: 14px;
+      right: 22px;
+      color: rgba(255, 255, 255, .85);
+      font-size: 42px;
+    }
+
+    .credential-tag {
+      padding: 4px 10px;
+      border: 1px solid rgba(255, 255, 255, .52);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, .14);
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .slide-dots {
+      display: flex;
+      justify-content: center;
+      gap: 9px;
+      margin-top: 16px;
+    }
+
+    .slide-dot {
+      width: 9px;
+      height: 9px;
+      padding: 0;
+      border: 0;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, .45);
+      cursor: pointer;
+      transition: width .2s, background .2s;
+    }
+
+    .slide-dot.active {
+      width: 26px;
+      background: #fff;
+    }
+
+    .drag-hint {
+      margin: 10px 0 0;
+      font-size: 13px;
+      opacity: .88;
+    }
+
+    .drag-hint span {
+      margin-right: 5px;
+      font-size: 17px;
+    }
+
     .about-intro,
     .about-more {
       position: relative;
@@ -945,3 +1097,9 @@
       }
     }
   
+
+.nav a.credentials-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
