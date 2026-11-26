@@ -1,4 +1,4 @@
-import { projects, projectBySlug } from './data/projects.js';
+import { getContent } from './data/contentStore.js';
 
 export function initPortfolio() {
 
@@ -8,11 +8,21 @@ export function initPortfolio() {
     let W = innerWidth, H = innerHeight, S = bear.offsetWidth;
     const pos = { x: W * .2, y: H * .6 }, vel = { x: 0, y: 0 }, target = { x: W * .2, y: H * .6 };
     let navOn = true, hasPointer = false, last = performance.now(), lastRip = 0, lastIdle = 0;
+    let skeletonClicks = [];
 
     addEventListener("resize", () => { W = innerWidth; H = innerHeight; S = bear.offsetWidth });
     addEventListener("pointermove", e => { target.x = e.clientX; target.y = e.clientY; hasPointer = true });
     addEventListener("pointerdown", e => {
       if (e.target.closest && e.target.closest(".panel.open")) return;
+      if (navOn) {
+        const r = bear.getBoundingClientRect();
+        if (e.clientX >= r.left && e.clientX <= r.right && e.clientY >= r.top && e.clientY <= r.bottom) {
+          const nowClick = performance.now();
+          skeletonClicks = skeletonClicks.filter(time => nowClick - time < 2500);
+          skeletonClicks.push(nowClick);
+          if (skeletonClicks.length >= 5) { skeletonClicks = []; dispatchEvent(new Event('admin:open')); }
+        }
+      }
       target.x = e.clientX; target.y = e.clientY; hasPointer = true;
       ripple(e.clientX, e.clientY, S * .55); ripple(pos.x, pos.y + S * .15, S * .85); heart();
     });
@@ -62,11 +72,13 @@ export function initPortfolio() {
       textT = navOn ? [] : [...panel.querySelectorAll("[data-sec]:not([hidden]) :is(h1,h2,h3,p,summary,.chips li,.links a,.plist li),.x")].map(el => ({ el, rs: [], zk: .25, x: 0, y: 0, z: 0, vx: 0, vy: 0, vz: 0, on: false, cool: 0 }));
       measureText(); setTimeout(measureText, 420);
     }
-    const views = ["about", "projects", "contact", "faqs", "credentials", ...projects.map(p => `project/${p.slug}`), ...projects.filter(p => p.journey).map(p => `journey/${p.slug}`)], panel = $("panel"), navwrap = document.querySelector(".navwrap");
+    const panel = $("panel"), navwrap = document.querySelector(".navwrap");
     let currentRoute = "";
     pool.insertBefore(panel, document.querySelector(".tint"));
     function route(forced) {
-      const id = typeof forced === "string" ? forced : location.hash.slice(1), on = views.includes(id);
+      const id = typeof forced === "string" ? forced : location.hash.slice(1), content = getContent(), projects = content.projects;
+      const views = ["about", "projects", "contact", "faqs", "credentials", ...projects.map(p => `project/${p.slug}`), ...projects.filter(p => p.journey).map(p => `journey/${p.slug}`)];
+      const on = views.includes(id);
       currentRoute = id;
       panel.classList.toggle("open", on); scrim.classList.toggle("on", on); bear.classList.toggle("deep", on); navwrap.classList.toggle("hide", on);
       document.querySelectorAll("[data-sec]").forEach(s => s.hidden = s.dataset.sec !== id);
@@ -74,7 +86,7 @@ export function initPortfolio() {
       panel.classList.toggle("resume-view", id === "about");
       $("resume-download").hidden = id !== "about";
       navOn = !on; if (on) $("pbody").scrollTop = 0; setPH(); buildText();
-      const projectSlug = id.split("/")[1], project = projectBySlug[projectSlug];
+      const projectSlug = id.split("/")[1], project = projects.find(item => item.slug === projectSlug);
       const title = id === "credentials" ? "Certificates & Achievements" : id.startsWith("project/") ? project?.title : id.startsWith("journey/") ? `${project?.title || "Project"} journey` : id[0]?.toUpperCase() + id.slice(1);
       document.title = on ? `${title} | Atharv` : "Atharv | Portfolio";
     }

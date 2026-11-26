@@ -1,10 +1,4 @@
-import { contactLinks } from '../data/contactLinks.js';
-
-const links = [
-  { label: 'Instagram', href: contactLinks.instagram, type: 'instagram' },
-  { label: 'Email', href: contactLinks.email, type: 'email' },
-  { label: 'LinkedIn', href: contactLinks.linkedin, type: 'linkedin' },
-];
+import { usePortfolioContent } from '../data/contentStore.js';
 
 function ContactIcon({ type }) {
   if (type === 'instagram') {
@@ -23,6 +17,12 @@ function ContactIcon({ type }) {
 }
 
 export default function ContactSection() {
+  const { socials } = usePortfolioContent();
+  const links = [
+    { label: 'Instagram', href: socials.instagram, type: 'instagram' },
+    { label: 'Email', href: socials.email, type: 'email' },
+    { label: 'LinkedIn', href: socials.linkedin, type: 'linkedin' },
+  ];
   return (
     <article data-sec="contact" hidden className="contact-section">
       <h1>Say hello</h1>

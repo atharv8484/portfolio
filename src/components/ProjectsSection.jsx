@@ -1,4 +1,4 @@
-import { projects } from '../data/projects.js';
+import { usePortfolioContent } from '../data/contentStore.js';
 
 function ProjectList({ title, items }) {
   return (
@@ -19,6 +19,7 @@ function ProjectList({ title, items }) {
 }
 
 export default function ProjectsSection() {
+  const { projects } = usePortfolioContent();
   return (
     <article data-sec="projects" hidden>
       <ProjectList title="Flagship projects" items={projects.filter(({ category }) => category === 'flagship')} />

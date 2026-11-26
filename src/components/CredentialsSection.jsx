@@ -1,16 +1,5 @@
 import { useRef, useState } from 'react';
-
-const certificates = [
-  { title: 'Introduction to Generative AI', image: '/images/certificate-generative-ai.svg' },
-  { title: 'Full Stack Web Development', image: '/images/certificate-web-development.svg' },
-  { title: 'Technical SEO Foundations', image: '/images/certificate-seo.svg' },
-];
-
-const achievements = [
-  { title: 'Hackathon project showcase', detail: 'Example milestone · replace with your achievement' },
-  { title: 'Launched a personal project', detail: 'Example milestone · replace with your achievement' },
-  { title: 'Community learning milestone', detail: 'Example milestone · replace with your achievement' },
-];
+import { usePortfolioContent } from '../data/contentStore.js';
 
 function SlideDots({ count, active, onSelect, label }) {
   return (
@@ -55,6 +44,8 @@ function DraggableSlider({ title, items, type }) {
   };
   const stopDrag = () => { dragRef.current = null; setDragging(false); };
 
+  if (!items.length) return <p className="empty-credentials">No {title.toLowerCase()} added yet.</p>;
+
   return (
     <div className={`credential-slider credential-slider-${type}`}>
       <div
@@ -93,6 +84,7 @@ function DraggableSlider({ title, items, type }) {
 }
 
 export default function CredentialsSection() {
+  const { certificates, achievements } = usePortfolioContent();
   return (
     <article data-sec="credentials" hidden className="credentials-section">
       <section className="sub credential-stage">

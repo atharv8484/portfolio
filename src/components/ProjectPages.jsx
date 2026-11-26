@@ -1,4 +1,4 @@
-import { projects } from '../data/projects.js';
+import { usePortfolioContent } from '../data/contentStore.js';
 
 function ProjectLinks({ project }) {
   const links = [
@@ -62,5 +62,6 @@ function ProjectJourney({ project }) {
 }
 
 export default function ProjectPages() {
+  const { projects } = usePortfolioContent();
   return <>{projects.map((project) => <ProjectDetail project={project} key={`detail-${project.slug}`} />)}{projects.map((project) => <ProjectJourney project={project} key={`journey-${project.slug}`} />)}</>;
 }

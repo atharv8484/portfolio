@@ -1,0 +1,203 @@
+{
+  "about": [
+    {
+      "title": "Hi, I am Atharv.",
+      "body": "I love to build things: websites, backend systems, AI tools, and a bit of everything in between. If it is interesting and I can make it work, I want to try it."
+    },
+    {
+      "title": "About me",
+      "body": "I am on a gap year in Khargone, Madhya Pradesh, getting ready to join Scaler School of Technology next year. I am using this time to build and learn at my own pace before college.\n\nI run Skateflow, a skating academy that teaches waveboarding, and I take freelance web development and SEO work for local businesses. In my own time I am teaching myself the math behind AI and building Mirrors, a memory system for students.\n\nThe long-term plan is a cross-disciplinary research lab in the spirit of Bell Labs, where curiosity leads and different fields share a room. I am curious about quantum mechanics, Arduino electronics, ethical hacking, and where AI meets music and robotics."
+    },
+    {
+      "title": "I consider my strengths to be",
+      "body": "Building things end to end, from backend to screen\nMaking AI systems that stay accurate and clean\nHelping local businesses get found on Google\nTeaching myself hard things and sticking with them\nRunning a real project, Skateflow, on my own",
+      "tools": "Node.js, Express, MongoDB, React, Gemini API, Qdrant, Technical SEO, Copywriting, GSAP and Three.js (learning)"
+    }
+  ],
+  "projects": [
+    {
+      "slug": "mirrors",
+      "title": "Mirrors",
+      "category": "flagship",
+      "summary": "An AI memory and note retrieval system for students.",
+      "description": "Mirrors helps students retrieve useful ideas from their notes. A knowledge graph feeds the model clean, approved threads so answers stay focused.",
+      "problem": "Student notes and past conversations can be difficult to search, and irrelevant context can make AI answers noisy.",
+      "solution": "Mirrors organizes knowledge into a graph and gives the model only approved, relevant threads to answer from.",
+      "technologies": [
+        "Node.js",
+        "MongoDB",
+        "Gemini",
+        "Qdrant"
+      ],
+      "images": [
+        {
+          "src": "/images/mirrors-notes.svg",
+          "alt": "Temporary illustrative Mirrors notes and answer interface",
+          "caption": "Temporary concept preview"
+        }
+      ],
+      "github": "https://github.com/",
+      "githubTemporary": true,
+      "website": "https://example.com/",
+      "websiteTemporary": true,
+      "journey": "Mirrors began as a hackathon idea: what if students could ask questions about what they had learned and get useful answers from their own notes? The first challenge was not simply connecting a language model to stored text. Notes accumulate quickly, and giving a model too much unrelated context can make its answers less focused. I wanted the system to remember useful ideas while keeping irrelevant material out of the conversation. That question became the starting point for Mirrors, an AI memory and note retrieval system for students. I began shaping the project around a knowledge graph, so related ideas could be connected instead of treated as isolated fragments. The graph provides a way to organize a student’s knowledge and find threads that are relevant to a question. Mirrors then passes only clean, approved threads to the model. This approach is intended to make the answer more grounded in the student’s own material and reduce noise from unrelated notes. The project has grown beyond its hackathon beginning and is still in active development. I continue to work on the system’s structure and on the relationship between stored notes, retrieval, and the model’s response. Mirrors is also part of my own learning: building it lets me explore how AI tools can support students without losing sight of the information they have collected. The goal is a memory system that feels useful and dependable, where a student can return to ideas they have already explored and build on them."
+    },
+    {
+      "slug": "skateflow",
+      "title": "Skateflow",
+      "category": "flagship",
+      "summary": "The website and promotion for my waveboarding academy.",
+      "description": "Skateflow is a skating academy that teaches waveboarding. I built its website and work on its promotion.",
+      "problem": "People interested in learning waveboarding need a clear way to discover the academy and its classes.",
+      "solution": "The website gives Skateflow an online presence, while promotion helps connect the academy with potential students.",
+      "technologies": [],
+      "images": [
+        {
+          "src": "/images/skateflow-preview.svg",
+          "alt": "Temporary illustrative Skateflow waveboarding academy preview",
+          "caption": "Temporary concept preview"
+        }
+      ],
+      "website": "https://skateflow.vercel.app",
+      "websiteTemporary": false,
+      "github": "https://github.com/",
+      "githubTemporary": true,
+      "journey": null
+    },
+    {
+      "slug": "shree-architect",
+      "title": "Shree Architect site and SEO",
+      "category": "flagship",
+      "summary": "Technical SEO improvements for a local architect’s React website.",
+      "description": "Freelance work to improve search visibility for a local architect.",
+      "problem": "The React site needed better search crawlability and stronger local business signals.",
+      "solution": "I fixed crawlability, added local schema markup, set up Google Business Profile, and optimized images.",
+      "technologies": [
+        "React",
+        "Local SEO",
+        "Schema"
+      ],
+      "images": [
+        {
+          "src": "/images/shree-architect-preview.svg",
+          "alt": "Temporary illustrative Shree Architect website preview",
+          "caption": "Temporary concept preview"
+        }
+      ],
+      "website": "https://example.com/",
+      "websiteTemporary": true,
+      "github": "https://github.com/",
+      "githubTemporary": true,
+      "journey": null
+    },
+    {
+      "slug": "choksiwala-jewellers",
+      "title": "Choksiwala Jewellers",
+      "category": "archive",
+      "summary": "A portfolio website for a family jewellery business.",
+      "description": "A portfolio website created for a family jewellery business.",
+      "problem": "The business needed a dedicated place online to present its work.",
+      "solution": "I made a portfolio website to showcase the jewellery business.",
+      "technologies": [],
+      "images": [
+        {
+          "src": "/images/choksiwala-preview.svg",
+          "alt": "Temporary illustrative Choksiwala Jewellers portfolio preview",
+          "caption": "Temporary concept preview"
+        }
+      ],
+      "website": "https://example.com/",
+      "websiteTemporary": true,
+      "github": "https://github.com/",
+      "githubTemporary": true,
+      "journey": null
+    },
+    {
+      "slug": "ai-ml-math-roadmap",
+      "title": "AI and ML math roadmap",
+      "category": "archive",
+      "summary": "A self-guided study path toward fine-tuning 7B models locally with LoRA.",
+      "description": "An ongoing learning project covering the mathematics behind AI and machine learning.",
+      "problem": "Learning the foundations for model fine-tuning requires a structured path through several areas of mathematics.",
+      "solution": "I am working through linear algebra, calculus, probability, and optimization as a self-guided roadmap.",
+      "technologies": [
+        "Linear algebra",
+        "Calculus",
+        "Probability",
+        "Optimization",
+        "LoRA"
+      ],
+      "images": [
+        {
+          "src": "/images/ai-math-roadmap-preview.svg",
+          "alt": "Temporary illustrative AI and ML math roadmap preview",
+          "caption": "Temporary concept preview"
+        }
+      ],
+      "website": "https://example.com/",
+      "websiteTemporary": true,
+      "github": "https://github.com/",
+      "githubTemporary": true,
+      "journey": null
+    }
+  ],
+  "faqs": [
+    [
+      "What do you do?",
+      "I build websites and backend systems, help local businesses show up on Google, and run a skating academy. I also build AI tools like Mirrors."
+    ],
+    [
+      "Can I hire you for a project?",
+      "Yes. I take freelance web development and SEO work, mostly for local businesses. Reach out from the Contact page."
+    ],
+    [
+      "What is Mirrors?",
+      "An AI-powered memory and note retrieval system for students. It began at a hackathon and I am still building it."
+    ],
+    [
+      "What is Skateflow?",
+      "A skating academy I run that teaches waveboarding. You can find it at skateflow.vercel.app."
+    ],
+    [
+      "Why a gap year?",
+      "I want to build and learn at my own pace before college. I plan to join Scaler School of Technology next year."
+    ],
+    [
+      "What is the long-term plan?",
+      "A research lab where AI, electronics, music, robotics and quantum computing share one roof, inspired by Bell Labs and MIT Media Lab."
+    ]
+  ],
+  "certificates": [
+    {
+      "title": "Introduction to Generative AI",
+      "image": "/images/certificate-generative-ai.svg"
+    },
+    {
+      "title": "Full Stack Web Development",
+      "image": "/images/certificate-web-development.svg"
+    },
+    {
+      "title": "Technical SEO Foundations",
+      "image": "/images/certificate-seo.svg"
+    }
+  ],
+  "achievements": [
+    {
+      "title": "Hackathon project showcase",
+      "detail": "Example milestone · replace with your achievement"
+    },
+    {
+      "title": "Launched a personal project",
+      "detail": "Example milestone · replace with your achievement"
+    },
+    {
+      "title": "Community learning milestone",
+      "detail": "Example milestone · replace with your achievement"
+    }
+  ],
+  "socials": {
+    "instagram": "https://www.instagram.com/your-handle/",
+    "email": "mailto:you@example.com",
+    "linkedin": "https://www.linkedin.com/in/your-profile/"
+  }
+}

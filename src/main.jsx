@@ -8,6 +8,7 @@ import ProjectPages from './components/ProjectPages.jsx';
 import ContactSection from './components/ContactSection.jsx';
 import FAQsSection from './components/FAQsSection.jsx';
 import CredentialsSection from './components/CredentialsSection.jsx';
+import AdminPanel from './components/AdminPanel.jsx';
 import './styles.css';
 
 function PoolScene({ hostRef }) {
@@ -26,7 +27,7 @@ function SectionPanel({ panelRef }) {
           </a>
           <a className="resume-download" id="resume-download" href="/resume.pdf" download="Atharv-Resume.pdf" hidden>
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4M5 17v3h14v-3" /></svg>
-            <span>Download resume (PDF)</span>
+            <span>Resume</span>
           </a>
         </header>
         <div className="body" id="pbody">
@@ -50,7 +51,7 @@ function Portfolio() {
     if (pool && panelRef.current) pool.insertBefore(panelRef.current, pool.querySelector('.tint'));
     return initPortfolio();
   }, []);
-  return <><PoolScene hostRef={sceneRef} /><SectionPanel panelRef={panelRef} /></>;
+  return <><PoolScene hostRef={sceneRef} /><SectionPanel panelRef={panelRef} /><AdminPanel /></>;
 }
 
 createRoot(document.getElementById('root')).render(<Portfolio />);
